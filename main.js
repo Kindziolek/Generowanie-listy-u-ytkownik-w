@@ -41,5 +41,8 @@ function renderTable(users) {
 button.addEventListener("click", function () {
     fetch("https://jsonplaceholder.typicode.com/users")
     .then(res => res.json())
-    .then(data => renderTable(data));
+    .then(data => renderTable(data))
+    .then(() => {
+        button.remove();
+    });
 });
