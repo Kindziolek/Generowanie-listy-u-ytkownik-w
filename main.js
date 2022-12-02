@@ -1,6 +1,6 @@
 const button = document.querySelector("button");
 
-function rednerRows(users) {
+function renderRows(users) {
    return users.map(user => {
         return `
         <tr>
@@ -26,7 +26,7 @@ function renderTable(users) {
             </tr>
         </thead>
         <tbody>
-            ${rednerRows(users)}
+            ${renderRows(users)}
         </tbody>
      </table>
      `;
