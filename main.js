@@ -1,5 +1,19 @@
 const button = document.querySelector("button");
 
+function rednerRows(users) {
+   return users.map(user => {
+        return `
+        <tr>
+            <td>${user.id}</td>
+            <td>${user.name}</td>
+            <td>${user.username}</td>
+            <td><a href="mailto:${user.email}">${user.email}</a></td>
+        </tr>
+        `
+    }).join("\n");
+}
+
+
 function renderTable(users) {
     const table = `
     <table class="table is-fullwidth is-bordered is-striped">
@@ -12,6 +26,7 @@ function renderTable(users) {
             </tr>
         </thead>
         <tbody>
+            ${rednerRows(users)}
         </tbody>
      </table>
      `;
@@ -19,6 +34,8 @@ function renderTable(users) {
      const div = document.createElement("div");
      
      div.innerHTML = table;
+
+     document.querySelector(".container").append(div);
 }
 
 button.addEventListener("cilck", function () {
