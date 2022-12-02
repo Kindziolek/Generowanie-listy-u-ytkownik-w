@@ -38,7 +38,7 @@ function renderTable(users) {
      document.querySelector(".container").append(div);
 }
 
-button.addEventListener("cilck", function () {
+button.addEventListener("click", function () {
     fetch("https://jsonplaceholder.typicode.com/users")
     .then(res => res.json())
     .then(data => renderTable(data));
